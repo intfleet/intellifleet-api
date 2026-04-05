@@ -5,9 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.intellifleet</groupId>
-	<artifactId>intellifleet-service</artifactId>
+	<artifactId>intellifleet-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>intellifleet-service</name>
+	<name>intellifleet-api</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -138,6 +138,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>intellifleet-api</finalName>
 		<plugins>
 			<!-- Maven Compiler Plugin -->
 			<plugin>
