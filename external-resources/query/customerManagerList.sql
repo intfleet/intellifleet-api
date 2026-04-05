@@ -1,0 +1,1 @@
+select tcm.int_customer_uid as id, tcm.int_customer_uid as value, tcm.txt_customer_name  as text from admin.table_customer_master tcm where tcm.txt_relation_type = 'HOD';

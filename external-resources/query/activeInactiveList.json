@@ -1,0 +1,4 @@
+[
+  { "id": 1, "value": "ACTIVE", "text": "ACTIVE" },
+  { "id": 2, "value": "INACTIVE", "text": "INACTIVE" }
+]

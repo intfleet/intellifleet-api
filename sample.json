@@ -1,0 +1,1 @@
+{"id":1,"name":"trip","object":"trip","groups":[{"id":"GyiHklmeis","label":"Credential","fieldType":"UI_FIELD_GROUP","fields":[{"id":"emdp3dmeis","name":"txt_user_name","label":"User name","fieldType":"TEXT","systemField":false,"required":false},{"id":"Iqqyz2meis","name":"txt_user_password","label":"Password","fieldType":"PASSWORD","systemField":false,"required":false}]}]}

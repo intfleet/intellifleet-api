@@ -1,0 +1,4 @@
+[
+  {"id": 1, "name": "trip", "object": "trip", "tableName": "trip_details"},
+  {"id": 2, "name": "employee-details", "object": "employee-details", "tableName": "employee_details"}
+]

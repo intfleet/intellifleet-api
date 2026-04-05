@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "name": "employee_id",
+    "dataType": "INTEGER",
+    "size": null,
+    "nullable": false
+  },
+  {
+    "id": 2,
+    "name": "first_name",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  },
+  {
+    "id": 3,
+    "name": "last_name",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  },
+  {
+    "id": 4,
+    "name": "email",
+    "dataType": "STRING",
+    "size": 255,
+    "nullable": false
+  },
+  {
+    "id": 5,
+    "name": "phone_number",
+    "dataType": "STRING",
+    "size": 20,
+    "nullable": true
+  },
+  {
+    "id": 6,
+    "name": "date_of_birth",
+    "dataType": "DATE",
+    "size": null,
+    "nullable": false
+  },
+  {
+    "id": 7,
+    "name": "hire_date",
+    "dataType": "DATE",
+    "size": null,
+    "nullable": false
+  },
+  {
+    "id": 8,
+    "name": "job_title",
+    "dataType": "STRING",
+    "size": 150,
+    "nullable": false
+  },
+  {
+    "id": 9,
+    "name": "department",
+    "dataType": "STRING",
+    "size": 150,
+    "nullable": false
+  },
+  {
+    "id": 10,
+    "name": "employment_type",
+    "dataType": "STRING",
+    "size": 50,
+    "nullable": false
+  },
+  {
+    "id": 11,
+    "name": "salary",
+    "dataType": "DOUBLE",
+    "size": null,
+    "nullable": false
+  },
+  {
+    "id": 12,
+    "name": "bonus",
+    "dataType": "FLOAT",
+    "size": null,
+    "nullable": true
+  },
+  {
+    "id": 13,
+    "name": "is_active",
+    "dataType": "BOOLEAN",
+    "size": null,
+    "nullable": false
+  },
+  {
+    "id": 14,
+    "name": "last_login",
+    "dataType": "DATETIME",
+    "size": null,
+    "nullable": true
+  },
+  {
+    "id": 15,
+    "name": "shift_start_time",
+    "dataType": "TIME",
+    "size": null,
+    "nullable": true
+  },
+  {
+    "id": 16,
+    "name": "address_line1",
+    "dataType": "STRING",
+    "size": 255,
+    "nullable": false
+  },
+  {
+    "id": 17,
+    "name": "address_line2",
+    "dataType": "STRING",
+    "size": 255,
+    "nullable": true
+  },
+  {
+    "id": 18,
+    "name": "city",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  },
+  {
+    "id": 19,
+    "name": "state",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  },
+  {
+    "id": 20,
+    "name": "postal_code",
+    "dataType": "STRING",
+    "size": 20,
+    "nullable": false
+  },
+  {
+    "id": 21,
+    "name": "country",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  },
+  {
+    "id": 22,
+    "name": "password",
+    "dataType": "STRING",
+    "size": 100,
+    "nullable": false
+  }
+]
