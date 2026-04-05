@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intellifleet-api
+  namespace: default
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: intellifleet-api
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+
+  template:
+    metadata:
+      labels:
+        app: intellifleet-api
+
+    spec:
+      containers:
+        - name: intellifleet-api
+          image: intellifleet-api-image:latest
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8084
+
+          volumeMounts:
+            - mountPath: /opt/logs/intellifleet-api
+              name: log-volume
+
+      volumes:
+        - name: log-volume
+          hostPath:
+            path: /opt/intellifleet/apps/intellifleet-api/logs
+            type: DirectoryOrCreate
