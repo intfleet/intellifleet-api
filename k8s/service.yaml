@@ -9,26 +9,8 @@ spec:
   type: NodePort
   ports:
     - name: app-port
-      port: 8081
-      targetPort: 8082
-      nodePort: 30081
-
-    - name: cgw-port
-      port: 9000
-      targetPort: 9000
-      nodePort: 30900
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: intellifleet-api-service-02
-
-spec:
-  selector:
-    app: intellifleet-api
-  type: NodePort
-  ports:
-    - name: app-port
       port: 8084
       targetPort: 8084
       nodePort: 30084
+
+
