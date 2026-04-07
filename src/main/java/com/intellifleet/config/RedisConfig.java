@@ -21,18 +21,13 @@ public class RedisConfig {
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 
-        Jackson2JsonRedisSerializer<Object> serializer =
-                new Jackson2JsonRedisSerializer<>(Object.class);
+        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);
 
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofMinutes(5))
                 .disableCachingNullValues()
-                .serializeKeysWith(
-                        RedisSerializationContext.SerializationPair.fromSerializer(
-                                new StringRedisSerializer()))
-                .serializeValuesWith(
-                        RedisSerializationContext.SerializationPair.fromSerializer(
-                                serializer));
+                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(serializer));
 
         return RedisCacheManager.builder(connectionFactory)
                 .cacheDefaults(config)

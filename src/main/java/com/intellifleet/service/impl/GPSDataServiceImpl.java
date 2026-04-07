@@ -1,6 +1,7 @@
 package com.intellifleet.service.impl;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellifleet.constants.ApiHttpStatus;
 import com.intellifleet.dto.ApiResponseEntity;
 import com.intellifleet.dto.InstrumentPacketForRedisDTO;
@@ -22,6 +23,8 @@ public class GPSDataServiceImpl implements GPSDataService {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    ObjectMapper objectMapper = new ObjectMapper();
+
     @Override
     public ApiResponseEntity getGpsData() {
 
@@ -42,14 +45,13 @@ public class GPSDataServiceImpl implements GPSDataService {
             for (String key : keys) {
                 Object value = redisTemplate.opsForValue().get(key);
                 log.info("value: {}", value);
-                if (value instanceof InstrumentPacketForRedisDTO dto) {
-                    result.add(dto);
-                }
+                result.add(objectMapper.convertValue(value, InstrumentPacketForRedisDTO.class));
             }
         } catch (Exception ex) {
             log.error(ex.getMessage());
             ex.printStackTrace();
         }
+        log.info("result: {}", result);
         return result;
     }
 
