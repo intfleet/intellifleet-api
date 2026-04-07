@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/gps-data")
+@RequestMapping("/gpsdata")
 @Tag(name = "GPS Data API", description = "Endpoints for GPS Data Controller")
 public interface GpsDataAPI {
 
