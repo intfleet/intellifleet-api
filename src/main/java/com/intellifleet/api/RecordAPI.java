@@ -55,6 +55,7 @@ public interface RecordAPI {
     @PostMapping
     ResponseEntity<ApiResponseEntity> saveOrUpdateRecord(@RequestBody SaveOrUpdateDTO saveOrUpdateDTO);
 
+    @Operation(summary = "Get GPS data")
     @GetMapping(value = "/gps-data")
     ResponseEntity<ApiResponseEntity> getGpsData();
 }
