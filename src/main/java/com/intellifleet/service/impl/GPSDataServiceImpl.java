@@ -31,22 +31,25 @@ public class GPSDataServiceImpl implements GPSDataService {
     @Override
     public List<InstrumentPacketForRedisDTO> getAllGPSData() {
         log.info("Started executing getAllGPSData()");
-        Set<String> keys = redisTemplate.keys("gps-data::*");
-        log.info("keys: {}", keys);
-        if (keys == null || keys.isEmpty()) {
-            return Collections.emptyList();
-        }
-
         List<InstrumentPacketForRedisDTO> result = new ArrayList<>();
-
-        for (String key : keys) {
-            Object value = redisTemplate.opsForValue().get(key);
-            log.info("value: {}", value);
-            if (value instanceof InstrumentPacketForRedisDTO dto) {
-                result.add(dto);
+        try {
+            Set<String> keys = redisTemplate.keys("gps-data::*");
+            log.info("keys: {}", keys);
+            if (keys == null || keys.isEmpty()) {
+                return Collections.emptyList();
             }
-        }
 
+            for (String key : keys) {
+                Object value = redisTemplate.opsForValue().get(key);
+                log.info("value: {}", value);
+                if (value instanceof InstrumentPacketForRedisDTO dto) {
+                    result.add(dto);
+                }
+            }
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
+            ex.printStackTrace();
+        }
         return result;
     }
 
