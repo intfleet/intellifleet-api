@@ -3,6 +3,7 @@ package com.intellifleet.controller;
 import com.intellifleet.api.RecordAPI;
 import com.intellifleet.dto.ApiResponseEntity;
 import com.intellifleet.dto.SaveOrUpdateDTO;
+import com.intellifleet.service.GPSDataService;
 import com.intellifleet.service.RecordControllerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,12 @@ public class RecordController implements RecordAPI {
     @Override
     public ResponseEntity<ApiResponseEntity> saveOrUpdateRecord(SaveOrUpdateDTO saveOrUpdateDTO) {
         ApiResponseEntity responseEntity = recordControllerService.saveOrUpdateRecord(saveOrUpdateDTO);
+        return ResponseEntity.status(responseEntity.getStatus()).body(responseEntity);
+    }
+
+    @Override
+    public ResponseEntity<ApiResponseEntity> getGpsData() {
+        ApiResponseEntity responseEntity = recordControllerService.getGpsData();
         return ResponseEntity.status(responseEntity.getStatus()).body(responseEntity);
     }
 }

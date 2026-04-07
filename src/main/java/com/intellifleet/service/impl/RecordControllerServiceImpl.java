@@ -4,6 +4,7 @@ import com.intellifleet.bean.UserContext;
 import com.intellifleet.constants.ApiHttpStatus;
 import com.intellifleet.dto.ApiResponseEntity;
 import com.intellifleet.dto.SaveOrUpdateDTO;
+import com.intellifleet.service.GPSDataService;
 import com.intellifleet.service.GenericAutowiredService;
 import com.intellifleet.service.RecordControllerService;
 import com.intellifleet.service.RecordService;
@@ -16,6 +17,9 @@ public class RecordControllerServiceImpl extends GenericAutowiredService impleme
 
     @Autowired
     RecordService recordService;
+
+    @Autowired
+    GPSDataService gpsDataService;
 
     @Override
     public ApiResponseEntity get(Long formId, Long id) {
@@ -38,4 +42,13 @@ public class RecordControllerServiceImpl extends GenericAutowiredService impleme
 
         return new ApiResponseEntity(recordService.saveOrUpdateRecord(saveOrUpdateDTO));
     }
+
+    @Override
+    public ApiResponseEntity getGpsData() {
+        UserContext userContext = Utils.getUserContext();
+
+        return new ApiResponseEntity(ApiHttpStatus.OK, gpsDataService.getAllGPSData());
+    }
+
+
 }

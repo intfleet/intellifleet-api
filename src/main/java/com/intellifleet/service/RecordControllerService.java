@@ -11,4 +11,6 @@ public interface RecordControllerService {
     public ApiResponseEntity getListView(String reqParams);
 
     ApiResponseEntity saveOrUpdateRecord(SaveOrUpdateDTO saveOrUpdateDTO);
+
+    ApiResponseEntity getGpsData();
 }
