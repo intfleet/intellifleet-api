@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IntellifleetServiceApplication {
+public class IntellifleetApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IntellifleetServiceApplication.class, args);
+		SpringApplication.run(IntellifleetApiApplication.class, args);
 	}
 
 }
